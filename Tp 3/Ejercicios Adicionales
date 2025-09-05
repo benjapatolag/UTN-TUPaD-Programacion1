@@ -1,0 +1,24 @@
+#Actividad 1
+contrasena_correcta = "programacion1"
+intentos = 3
+while intentos > 0:
+    contrasena_usuario = input("Introduce la contraseña: ").lower
+    if contrasena_usuario == contrasena_correcta:
+        print("Contraseña correcta. Bienvenido.")
+        break
+    else:
+        intentos -= 1
+        if intentos > 0:
+            print(f"Contraseña incorrecta. Te quedan {intentos} intentos.")
+        else:
+            print("Has agotado todos los intentos. Acceso denegado.")
+
+#Actividad 2
+letra = input("Ingrese una letra: ")
+vocales = "aeiouAEIOU"
+if(letra in vocales):
+    print("La letra ingresada es una vocal")
+else:
+    print("La letra ingresada no es una vocal")
+
+#Actividad 3
