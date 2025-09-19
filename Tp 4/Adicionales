@@ -14,8 +14,8 @@ for i in range(1,numero+1):
     print("*"*i)
 
 #Actividad 4
-for i in range(10):
-    print((i+1)*10)
+for i in range(11):
+    print(f"10 * {i} = {i*10}")
 
 #Actividad 5
 contraseña = input("Ingrese su contraseña para guardarla: ")
