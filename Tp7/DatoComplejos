@@ -28,17 +28,20 @@ else:
     print(f"No se encontró el contacto '{consulta}'.")
 
 #Actividad 5
-Recuento = {}
-frase = input("Ingrese una frase")
+frase = input("Ingrese una frase: ")
 palabras = frase.split()
 palabras_unicas = set(palabras)
-print("Palabras unicas: ", palabras_unicas)
+print("Palabras únicas:", palabras_unicas)
+
+Recuento = {}
 for palabra in palabras:
-    if palabra in palabras:
+    if palabra in Recuento:
         Recuento[palabra] += 1
     else:
         Recuento[palabra] = 1
 print("Cantidad de apariciones de cada palabra:")
 print(Recuento)
+
+#Actividad 6
 
 
