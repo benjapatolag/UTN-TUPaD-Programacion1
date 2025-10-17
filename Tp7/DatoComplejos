@@ -16,3 +16,29 @@ lista_fruta = list(precios_frutas.keys())
 print(lista_fruta)
 
 #Actividad 4
+contactos = {}
+for i in range(5):
+    nombre = input(f"Ingresá el nombre del contacto {i+1}: ")
+    numero = input(f"Ingresá el número telefónico de {nombre}: ")
+    contactos[nombre] = numero  
+consulta = input("Ingresá el nombre del contacto que querés buscar: ")
+if consulta in contactos:
+    print(f"El número de {consulta} es: {contactos[consulta]}")
+else:
+    print(f"No se encontró el contacto '{consulta}'.")
+
+#Actividad 5
+Recuento = {}
+frase = input("Ingrese una frase")
+palabras = frase.split()
+palabras_unicas = set(palabras)
+print("Palabras unicas: ", palabras_unicas)
+for palabra in palabras:
+    if palabra in palabras:
+        Recuento[palabra] += 1
+    else:
+        Recuento[palabra] = 1
+print("Cantidad de apariciones de cada palabra:")
+print(Recuento)
+
+
