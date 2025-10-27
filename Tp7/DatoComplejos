@@ -43,5 +43,71 @@ print("Cantidad de apariciones de cada palabra:")
 print(Recuento)
 
 #Actividad 6
+alumnos = {}
+for i in range (3):
+    nombre = input(f"Ingrese el nombre del alumnos n° {i+1}: ")
+    nota = tuple(int(input(f"Ingrese la nota n° {j+1}: "))for j in range (3))
+    alumnos[nombre] = nota
+for nombre, nota in alumnos.items():
+    promedio = sum(nota) / len(nota)
+    print(f"{nombre}: {promedio}")
 
+#Actividad 7
+alumnos = {}
+for i in range (3):
+    nombre = input(f"Ingrese el nombre del alumnos n° {i+1}: ")
+    nota = tuple(int(input(f"Ingrese la nota del parcial n° {j+1}: "))for j in range (2))
+    alumnos[nombre] = nota
+for nombre, nota in alumnos.items():
+    if nota[0] >=6 and nota[1] >=6 :
+        print(f"El alumnos {nombre} aprobo los dos parciales")
+        break
+    elif nota[0] >=6 or nota[1] >=6:
+        print(f"El alumnos {nombre} aprobo los uno de los dos parciales ")
+    else:
+        print(f"El alumnos {nombre} desaprobo los dos parciales")
 
+#Actividad 8
+productos = {
+    "manzanas": 10,
+    "bananas": 5,
+    "peras": 8
+}
+print("Inventario actual:")
+for producto, stock in productos.items():
+    print(f"{producto}: {stock} unidades")
+
+nombre = input("\nIngrese el nombre del producto del cual desea saberer del stock: ")
+if nombre in productos:
+    print(f"El stock de {nombre} es: {productos[nombre]}")
+    agregar = int(input("Desea agregar stock? \n 1:Si 2:No\n" ))
+    if agregar == 1:
+        cantidad = int(input("Cuanto desea agregar: "))
+        productos[nombre] += cantidad
+else:
+    nuevo = int(input(f"Desea agregar {nombre} como nuevo producto? \n 1:Si 2:No\n"))
+    if nuevo ==1:
+        productos[nombre] = 0
+print("\nInventario final:")
+for producto, stock in productos.items():
+    print(f"{producto}: {stock} unidades")       
+
+#Actividad 9
+eventos = {
+    ("lunes", "10:00"):"Reunion",
+    ("martes", "15:00"):"Clase de Ingles"
+}
+dia = input("Ingrese el dia del que quiere saber si hay actividad")
+hora = input("Ingrese la hora")
+
+clave = (dia, hora)
+
+if clave in eventos:
+    print(f"El {dia} a la hora {hora} hay un evento de {eventos[dia,hora]}")
+
+#Actividad 10
+diccionario_paises = {}
+for i in range (3):
+    capital = input("Ingrese la capital: ")
+    pais = input("Ingrese el pais de la capital")
+    diccionario_paises[capital] = pais
