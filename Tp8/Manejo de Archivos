@@ -1,0 +1,16 @@
+#Actividad 1
+print("Escribiendo con write()")
+with open("productos.csv", "w") as archivo:
+    archivo.write("Nombre,Precio,Cantidad\n")
+    archivo.write("Lapicera,120.5,30\n")
+    archivo.write("Regla,100.0,25\n")
+
+#Actividad 2
+print("Leyendo archivo CSV y separando datos")
+with open("productos.csv", "r") as archivo:
+    for linea in archivo:
+        linea = linea.strip()
+        partes = linea.split(",")
+        print(partes)
+
+#Activiad 3
