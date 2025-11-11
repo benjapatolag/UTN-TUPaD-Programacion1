@@ -1,0 +1,107 @@
+#Actividad 1
+def suma_pares(n):
+    if n<2:
+        return 0
+    if n%2==0:
+        return n + suma_pares(n-2)
+    else:
+        return suma_pares(n-1)
+
+
+num=int(input("Ingrese un número: "))
+pares=suma_pares(num)
+print(f"La suma de los números pares desde 2 hasta {num} es: {pares}")
+
+
+#Actividad 2 
+def contar_letra(palabra, letra):
+    if len(palabra) == 0:
+        return 0
+    else:
+        cuenta = 1 if palabra[0] == letra else 0
+        return cuenta + contar_letra(palabra[1:], letra)
+    
+texto = input("Ingrese una palabra o frase: ")
+letra = input("Ingrese la letra a contar: ")
+cantidad = contar_letra(texto, letra)
+print(f"La letra '{letra}' aparece {cantidad} veces en '{texto}'.")
+
+#Actividad 3
+def invertir_cadena(texto):
+    if len(texto) == 0:
+        return ""
+    else:
+        return texto[-1] + invertir_cadena(texto[:-1])
+
+frase = input("Ingrese una cadena de texto: ")
+invertida = invertir_cadena(frase)
+print(f"La cadena invertida es: {invertida}")
+
+#Actividad 4
+def contar_elementos(lista):
+    if lista == []:
+        return 0
+    else:
+        return 1 + contar_elementos(lista[:-1])
+
+numeros = []
+cantidad = int(input("¿Cuántos números desea agregar a la lista? "))
+for i in range(cantidad):
+    numero = int(input("Ingrese un número para agregar a la lista: "))
+    numeros.append(numero)
+cantidad_elementos = contar_elementos(numeros)
+print(f"La cantidad de elementos en la lista es: {cantidad_elementos}")
+
+#Actividad 5
+def contiene_letra(palabra, letra):
+    if len(palabra)==0:
+        return False
+    if palabra[0]==letra:
+        return True
+    else:
+        return contiene_letra(palabra[1:], letra)
+palabra=input("Ingrese una palabra: ")
+letra=input("Ingrese una letra a buscar: ")
+if contiene_letra(palabra, letra):
+    print(f"La letra '{letra}' está presente en la palabra '{palabra}'.")
+else:
+    print(f"La letra '{letra}' no está presente en la palabra '{palabra}'.")
+    
+    
+#Actividad 6
+def multiplicar(a,b):
+    if b==0:
+        return 0
+    else:
+        return a +  multiplicar(a,b-1)
+num1=int(input("Ingrese el primer número: "))
+num2=int(input("Ingrese el segundo número: "))
+resultado=multiplicar(num1,num2)
+print(f"La multiplicación de {num1} y {num2} es: {resultado}")
+
+#Actividad 7
+def cuenta_regresiva(n):
+    if n<=0:
+        return
+    else:
+        print(n)
+        cuenta_regresiva(n-1)
+numero=int(input("Ingrese un número entero positivo: "))
+cuenta_regresiva(numero)
+
+#Actividad 8
+def mostrar_letras(palabra):
+    if len(palabra)==0:
+        return
+    else:
+        print(palabra[0])
+        mostrar_letras(palabra[1:])    
+texto=input("Ingrese una palabra o frase: ")
+mostrar_letras(texto)
+
+
+
+
+
+
+
